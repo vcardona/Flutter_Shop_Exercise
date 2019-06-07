@@ -42,7 +42,7 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
           ),
         ),
       ),
-      placeholder: 'Name',
+      placeholder: 'Buyer Name',
       onChanged: (newName) {
         setState(() {
           name = newName;
@@ -135,7 +135,7 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
             },
           ),
         ),
-        CupertinoButton.filled(
+        CupertinoButton(
           child: const Text('Clear Cart'),
           onPressed: () {
             final model = Provider.of<AppStateModel>(context);
@@ -207,13 +207,23 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
                           'Total  ${_currencyFormat.format(model.totalCost)}',
                           style: Styles.productRowTotal,
                         ),
-                      ],
+                        const SizedBox(height: 15),
+                        CupertinoButton.filled(
+                          child: const Text('Buy Now'),
+                          padding: EdgeInsets.all(10.0),
+                          onPressed: () {
+                            final model = Provider.of<AppStateModel>(context);
+                            model.clearCart();
+                          },
+                        ),
+                        const SizedBox(height: 50),
+                      ], //Column
                     )
-                  ],
-                ),
-              );
-            }
-        }
+                  ], //Row <Widget>
+                ), //Row
+              ); //Return Padding
+            } //If
+        } //Switch
         return null;
       },
     );
