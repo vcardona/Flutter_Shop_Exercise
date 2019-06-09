@@ -213,10 +213,9 @@ class _ShoppingCartTabState extends State<ShoppingCartTab> {
                           child: const Text('Buy Now'),
                           padding: EdgeInsets.all(10.0),
                           onPressed: () {
-                            final model = Provider.of<AppStateModel>(context);
-                            model.clearCart();
-                          },
-                        ),
+                            print('Comprando');
+                          }, //OnPressed
+                        ), //CupertinoButton Filled
                         const SizedBox(height: 50),
                       ], //Column
                     )
