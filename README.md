@@ -1,1 +1,3 @@
-# Flutter_Shop_Example
+# Flutter Shop Example
+
+![](FlutterShop.gif)
